@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Rignchen
+	email = rinchendemort@gmail.com
+	signingkey = ~/.ssh/id_ed25519
+[alias]
+	set-url = remote set-url origin
+	get-url = remote get-url origin
+	last = log -1 HEAD
+	undo = reset HEAD~1
+	graph = log --all --graph --decorate --oneline
+[pull]
+	rebase = false
+[gpg]
+	format = ssh
