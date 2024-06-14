@@ -15,3 +15,5 @@
 	rebase = false
 [gpg]
 	format = ssh
+[push]
+	autoSetupRemote = true
