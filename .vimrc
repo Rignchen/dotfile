@@ -13,8 +13,8 @@ set nowrap
 set ignorecase smartcase
 " highlight search results
 set hlsearch
-" use spaces instead of tabs
-set expandtab
+" use 4 spaces instead of tabs
+set expandtab shiftwidth=4 smarttab
 " deactivate mouse
 set mouse=
 
