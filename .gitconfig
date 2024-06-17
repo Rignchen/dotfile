@@ -9,7 +9,10 @@
 	last = log -1 HEAD
 	undo = reset HEAD~1
 	graph = log --all --graph --decorate --oneline
+        current-branch = branch --show-current
 [pull]
 	rebase = false
 [gpg]
 	format = ssh
+[push]
+	autoSetupRemote = true

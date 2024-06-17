@@ -19,6 +19,11 @@ switch (uname -n)
         alias "copy=xclip -selection clipboard"
 end
 
+alias "cd.=cd .."
+alias "cd..=cd ../.."
+alias "cd...=cd ../../.."
+alias "cd....=cd ../../../.."
+
 # execution
 zoxide init fish | source
 cls

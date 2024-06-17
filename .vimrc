@@ -39,6 +39,8 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " file explorer
 Plug 'tpope/vim-vinegar'
+" fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -48,6 +50,7 @@ call plug#end()
 
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F2> :set number! relativenumber!<CR>
+nnoremap <tab><tab> :FZF<CR>
 
 " Disable "beginner" keys {{{
 
