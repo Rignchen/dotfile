@@ -5,16 +5,18 @@ syntax on
 
 " SETTINGS {{{
 
-set number relativenumber
 " line relative line number with classic current line number
-set nowrap
+set number relativenumber
 " line don't warp at the end of the line if it's too long
-set ignorecase smartcase
+set nowrap
 " search ignore case if the search pattern is all lowercase, otherwise case sensitive
-set hlsearch
+set ignorecase smartcase
 " highlight search results
-set expandtab
-" use spaces instead of tabs
+set hlsearch
+" use 4 spaces instead of tabs
+set expandtab shiftwidth=4 smarttab
+" deactivate mouse
+set mouse=
 
 " shell tab completion {{{
 set wildmenu
