@@ -11,12 +11,14 @@ alias "Tconfig=$EDITOR ~/.config/fish/config.fish"
 alias "Thistory=$EDITOR ~/.local/share/fish/fish_history"
 alias "Vimrc=$EDITOR ~/.vimrc"
 alias "su=sudo su"
-# copy alias is not the same on arch and on fedora
+# alias are not all the same on different linux
 switch (uname -n)
     case archlinux
         alias "copy=copyq copy"
+        alias "pacman=sudo pacman"
     case fedora
         alias "copy=xclip -selection clipboard"
+        alias "dnf=sudo dnf"
 end
 
 alias "cd.=cd .."
