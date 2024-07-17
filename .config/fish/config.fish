@@ -29,3 +29,9 @@ alias "cd....=cd ../../../.."
 # execution
 zoxide init fish | source
 cls
+
+# tmux
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]
+    tmux attach -t default || tmux new -s default
+end
+
