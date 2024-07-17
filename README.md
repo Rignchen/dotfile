@@ -17,21 +17,36 @@ stow .
 
 ## Dependencies
 Some of the configs require some additional programs to work
-### .vimrc
+### Vim
 The vim config file require the plugin manager ``Plug`` to be installed in order to install plugins
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
-### .tmux.conf
+There's the fzf plugin for vim wich require the fzf program to be installed
+```bash
+sudo pacman -S fzf
+```
+### Tmux/Fish
+The fish config automatically launch tmux when fish is started so you need to install tmux
+The tmux config force set fish as the default shell (because some of my computers didn't want to use fish as default shell), to do so you need to install fish and register it as a valid shell
+```bash
+sudo pacman -S fish tmux
+echo $(which fish) | sudo tee -a /etc/shells
+```
 The tmux config file also require the use of a plugin manager ``tpm``
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-The tmux config force set fish as the default shell (because some of my computers didn't want to use fish as default shell), to do so you need to install fish and register it as a valid shell
+### Hyprland
+Hyprland has a few dependencies, you need to install them
 ```bash
-sudo pacman -S fish
-echo $(which fish) | sudo tee -a /etc/shells
+sudo pacman -S kitty nautilus fuzzrl firefox wlogout vim
+```
+### Wlogout
+Wlogout uses swaylock as the lockscreen, you need to install it
+```bash
+sudo pacman -S swaylock
 ```
 
 ## Root access
