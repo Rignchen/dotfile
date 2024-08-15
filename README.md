@@ -27,16 +27,25 @@ There's the fzf plugin for vim wich require the fzf program to be installed
 ```bash
 sudo pacman -S fzf
 ```
-### Tmux/Fish
-The fish config automatically launch tmux when fish is started so you need to install tmux
-The tmux config force set fish as the default shell (because some of my computers didn't want to use fish as default shell), to do so you need to install fish and register it as a valid shell
-```bash
-sudo pacman -S fish tmux
-echo $(which fish) | sudo tee -a /etc/shells
-```
-The tmux config file also require the use of a plugin manager ``tpm``
+### Tmux
+The tmux config file require the use of a plugin manager ``tpm``
 ```bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+The tmux config is setup to force the use of zsh, that way I can set tmux as my default shell
+```bash
+sudo pacman -S zsh
+```
+### Zsh
+The zsh config file require you to install the plusin manager ``oh-my-zsh``
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+Some of the plugins needs to be manualy downloaded
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
