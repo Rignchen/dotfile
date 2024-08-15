@@ -45,8 +45,8 @@ export PATH="$PATH:/home/nils/.local/share/JetBrains/Toolbox/scripts"
 export EDITOR='vim'
 
 # --- Os Specific ---
-case $(uname -n) in
-    archlinux)
+case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
+    arch)
         alias "copy=copyq copy"
         alias "pacman=sudo pacman"
         ;;
@@ -55,6 +55,7 @@ case $(uname -n) in
         alias "dnf=sudo dnf"
         ;;
     ubuntu)
+        alias "fd=fdfind"
         ;;
 esac
 
