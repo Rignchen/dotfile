@@ -13,15 +13,18 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
+    # autocompletion
     zsh-autosuggestions
+    zsh-autocomplete
+    # visual
     zsh-syntax-highlighting
     fast-syntax-highlighting
-    zsh-autocomplete
+    colored-man-pages
+    # app
 #    tmux
 #    zoxide
 #    docker
 #    docker-compose
-    colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -56,8 +59,10 @@ case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
         ;;
     ubuntu)
         alias "fd=fdfind"
+        alias "apt-get=sudo apt-get"
+        alias "apt=sudo apt"
         ;;
 esac
 
-# cls
+cls
 
