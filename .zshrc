@@ -13,13 +13,13 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
-    # autocompletion
-    zsh-autosuggestions
-    zsh-autocomplete
     # visual
     zsh-syntax-highlighting
     fast-syntax-highlighting
     colored-man-pages
+    # autocompletion
+    zsh-autosuggestions
+    zsh-autocomplete
     # app
 #    tmux
 #    zoxide
