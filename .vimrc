@@ -27,9 +27,10 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " }}}
 
 " PLUGINS {{{
-
 call plug#begin('~/.vim/plugged')
 
+" github copilot
+Plug 'github/copilot.vim'
 " undo tree
 Plug 'mbbill/undotree'
 " lsp + completion
@@ -43,7 +44,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
-
 " }}}
 
 " MAPPINGS {{{
