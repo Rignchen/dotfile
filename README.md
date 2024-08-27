@@ -55,7 +55,7 @@ mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
 ```bash
-sudo pacman -S kitty nautilus fuzzrl firefox wlogout vim
+sudo pacman -S kitty nautilus fuzzel firefox wlogout vim
 ```
 ### Wlogout
 Wlogout uses swaylock as the lockscreen, you need to install it

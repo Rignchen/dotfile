@@ -34,8 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 # --- Aliases ---
 alias "su=sudo su"
-alias "copy=xclip -selection clipboard"
-alias "fetch=fastfetch 2>/dev/null | neofetch"
+alias "fetch=fastfetch || neofetch"
 alias "cls=clear && fetch"
 
 alias "cd.=cd .."
