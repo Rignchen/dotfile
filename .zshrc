@@ -43,7 +43,7 @@ alias "cd...=cd ../../.."
 alias "cd....=cd ../../../.."
 
 # --- Env ---
-export PATH="$PATH:/home/nils/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/cmd"
 export EDITOR='vim'
 
 # --- Os Specific ---
@@ -63,5 +63,8 @@ case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
         ;;
 esac
 
+# --- End ---
+compinit
+eval "$(zoxide init zsh)"
 cls
 
