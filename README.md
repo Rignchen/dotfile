@@ -3,8 +3,8 @@ This repository is a place to store my dotfiles, it's use to keep track of my co
 ## Pre-installation
 First installx [git](https://git-scm.com/) and [GNU Stow](https://www.gnu.org/software/stow/).
 ```bash
-sudo pacman -S git
-sudo pacman -S stow
+sudo depot i git
+sudo depot i stow
 ```
 
 ## Installation
@@ -25,7 +25,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 There's the fzf plugin for vim wich require the fzf program to be installed
 ```bash
-sudo pacman -S fzf
+sudo depot i fzf
 ```
 ### Tmux
 The tmux config file require the use of a plugin manager ``tpm``
@@ -34,7 +34,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 The tmux config is setup to force the use of zsh, that way I can set tmux as my default shell
 ```bash
-sudo pacman -S zsh
+sudo depot i zsh
 ```
 ### Zsh
 The zsh config file require you to install the plusin manager ``oh-my-zsh``
@@ -56,12 +56,12 @@ mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
 ```bash
-sudo pacman -S kitty nautilus fuzzel firefox wlogout vim
+sudo depot i kitty nautilus fuzzel firefox wlogout vim
 ```
 ### Wlogout
 Wlogout uses swaylock as the lockscreen, you need to install it
 ```bash
-sudo pacman -S swaylock
+sudo depot i swaylock
 ```
 
 ## Root access
