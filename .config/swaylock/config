@@ -1,0 +1,10 @@
+## Utility
+ignore-empty-password
+show-failed-attempts
+show-keyboard-layout
+
+## Display
+color=0F0F0F
+ring-color=FF69B4
+clock
+indicator-idle-visible

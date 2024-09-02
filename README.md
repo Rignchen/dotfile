@@ -59,9 +59,10 @@ Hyprland has a few dependencies, you need to install them
 sudo depot i kitty nautilus fuzzel firefox wlogout vim
 ```
 ### Wlogout
-Wlogout uses swaylock as the lockscreen, you need to install it
+Wlogout uses  swaylock effects as the lockscreen, you need to install it
 ```bash
-sudo depot i swaylock
+sudo depot i  swaylock-effects
+
 ```
 
 ## Root access
