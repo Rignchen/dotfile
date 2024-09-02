@@ -20,6 +20,8 @@ plugins=(
     # autocompletion
     zsh-autosuggestions
     zsh-autocomplete
+    # app autocompletion
+    rust
     # app
 #    tmux
 #    zoxide
@@ -28,9 +30,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # --- Aliases ---
 alias "su=sudo su"
@@ -43,7 +42,7 @@ alias "cd...=cd ../../.."
 alias "cd....=cd ../../../.."
 
 # --- Env ---
-export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/cmd"
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts:$HOME/cmd:$HOME/Discord"
 export EDITOR='vim'
 
 # --- Os Specific ---
