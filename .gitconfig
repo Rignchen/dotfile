@@ -9,10 +9,11 @@
 	last = log -1 HEAD
 	undo = reset HEAD~1
 	graph = log --all --graph --decorate --oneline
-        current-branch = branch --show-current
+	current-branch = branch --show-current
 	s = status -s
 	sh = stash
 	sync = !git stash && git pull && git push && git stash pop
+	a = add . --patch
 [pull]
 	rebase = false
 [gpg]
