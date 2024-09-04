@@ -17,6 +17,11 @@ set hlsearch
 set expandtab shiftwidth=4 smarttab
 " deactivate mouse
 set mouse=
+" Go to the last position when opening a file
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 
 " shell tab completion {{{
 set wildmenu
