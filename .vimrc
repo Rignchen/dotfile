@@ -43,6 +43,8 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Debugger
+Plug 'puremourning/vimspector'
 " file explorer
 Plug 'tpope/vim-vinegar'
 " fuzzy finder
