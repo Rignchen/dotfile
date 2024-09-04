@@ -12,7 +12,7 @@
 	current-branch = branch --show-current
 	s = status -s
 	sh = stash
-	sync = !git stash && git pull && git push && git stash pop
+	sync = !git stash && git pull && git push && git stash pop && echo "Synced successfully"
 	a = add . --patch
 [pull]
 	rebase = false
