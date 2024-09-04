@@ -5,8 +5,10 @@ syntax on
 
 " SETTINGS {{{
 
-" line relative line number with classic current line number
+" show line numbers (relative and absolute)
 set number relativenumber
+" show line numbers in directories
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 " line don't warp at the end of the line if it's too long
 set nowrap
 " search ignore case if the search pattern is all lowercase, otherwise case sensitive
