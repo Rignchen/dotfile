@@ -35,6 +35,7 @@ source $ZSH/oh-my-zsh.sh
 alias "su=sudo su"
 alias "fetch=fastfetch || neofetch"
 alias "cls=clear && fetch"
+alias ":q=exit"
 
 alias "cd.=cd .."
 alias "cd..=cd ../.."
