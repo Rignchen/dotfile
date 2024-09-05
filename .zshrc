@@ -1,3 +1,9 @@
+# --- TMUX ---
+if [ -z "$TMUX" ]; then
+    tmux attach || tmux
+    exit
+fi
+
 # --- Oh My ZSH ---
 export ZSH="$HOME/.oh-my-zsh"
 
