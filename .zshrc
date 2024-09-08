@@ -11,7 +11,7 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd.mm.yyyy"
 
 # Warn me when there's an update
-zstyle ':omz:update' mode reminder
+zstyle ':omz:update' auto
 zstyle ':omz:update' frequency 7
 
 ENABLE_CORRECTION="true"
