@@ -4,38 +4,22 @@ if [ -z "$TMUX" ]; then
     exit
 fi
 
-# --- Oh My ZSH ---
-export ZSH="$HOME/.oh-my-zsh"
+# --- Load Plugin Manager ---
+[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
-ZSH_THEME="robbyrussell"
-HIST_STAMPS="dd.mm.yyyy"
+# --- Variables ---
+export ZAP_GIT_PREFIX="git@github.com:"
 
-# Warn me when there's an update
-zstyle ':omz:update' auto
-zstyle ':omz:update' frequency 7
-
-ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-plugins=(
-    # visual
-    zsh-syntax-highlighting
-    fast-syntax-highlighting
-    colored-man-pages
-    # autocompletion
-    zsh-autosuggestions
-    zsh-autocomplete
-    # app autocompletion
-    rust
-    # app
-#    tmux
-#    zoxide
-#    docker
-#    docker-compose
-)
-
-source $ZSH/oh-my-zsh.sh
+# --- Plugins ---
+# visual
+plug "zsh-users/zsh-syntax-highlighting"
+plug "zdharma-continuum/fast-syntax-highlighting"
+plug "ael-code/zsh-colored-man-pages"
+# autocompletion
+plug "zsh-users/zsh-autosuggestions"
+plug "marlonrichert/zsh-autocomplete"
+# app autocompletion
+plug "ryutok/rust-zsh-completions"
 
 # --- Aliases ---
 alias "su=sudo su"

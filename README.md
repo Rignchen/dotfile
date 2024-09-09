@@ -37,21 +37,9 @@ The tmux config is setup to force the use of zsh, that way I can set tmux as my 
 sudo depot i zsh
 ```
 ### Zsh
-The zsh config file require you to install the plusin manager ``oh-my-zsh``
+The zsh config file require you to install the plusin manager ``zap``
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-Some of the plugins needs to be manualy downloaded
-```
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-```
-Oh my zsh override the zshrc file
-```bash
-rm ~/.zshrc
-mv ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 ```
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
