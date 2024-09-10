@@ -20,7 +20,7 @@
             "windows": "\uf17a"
           },
           "style": "diamond",
-          "template": " {{.Icon}} ",
+          "template": "{{.Icon}} ",
           "type": "os"
         },
         {
