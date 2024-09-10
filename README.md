@@ -41,6 +41,10 @@ The zsh config file require you to install the plusin manager ``zap``
 ```
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1 --keep
 ```
+The config also use `oh my posh` for the visual theme
+```bash
+curl -s https://ohmyposh.dev/install.sh | bash -s
+```
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
 ```bash
