@@ -20,7 +20,7 @@
             "windows": "\uf17a"
           },
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": " {{.Icon}} ",
           "type": "os"
         },
         {
