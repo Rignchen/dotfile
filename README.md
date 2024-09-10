@@ -54,10 +54,12 @@ sudo depot i kitty nautilus fuzzel firefox wlogout vim
 Wlogout uses  swaylock effects as the lockscreen, you need to install it
 ```bash
 sudo depot i  swaylock-effects
-
 ```
 
-## Root access
+## Recommendations
+### Fonts
+I recommend installing the `nerd-font` package for the `JetBrainsMono` font in order to have all the icons working
+### Root access
 If you have root access you may want to use the vim config when logged in as root\
 Be aware that any user with root access will then have the same vim config as you
 ```bash
