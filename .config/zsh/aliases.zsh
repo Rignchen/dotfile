@@ -26,6 +26,7 @@ case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
     nixos)
         alias "copy=wl-copy"
         alias "nixpm=sudo vim /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+        alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system"
         ;;
 esac
 
