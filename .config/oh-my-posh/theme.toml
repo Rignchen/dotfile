@@ -1,0 +1,82 @@
+console_title_template = "{{.UserName}}@{{.HostName}} : {{.Folder}}"
+final_space = true
+version = 2
+
+[[blocks]]
+alignment = "left"
+newline = true
+type = "prompt"
+
+    [[blocks.segments]]
+    background = "#fbfbfb"
+    background_templates = [ "{{ if eq .Code 0 }}#fbfbfb{{ else }}#c22{{ end }}" ]
+    foreground = "#0077c2"
+    foreground_templates = [ "{{ if eq .Code 0 }}#0077c2{{ else }}#632020{{ end }}" ]
+    leading_diamond = ""
+    style = "diamond"
+    template = "{{ if eq .Code 0 }}{{.Icon}}{{ else }}{{ .Code }}{{ end }} "
+    type = "os"
+
+        [blocks.segments.properties]
+        arch = ""
+        debian = ""
+        fedora = ""
+        linux = ""
+        macos = ""
+        manjaro = ""
+        opensuse = ""
+        ubuntu = ""
+        windows = ""
+
+    [[blocks.segments]]
+    background = "#fbfbfb"
+    foreground = "#0077c2"
+    powerline_symbol = ""
+    style = "powerline"
+    template = "{{ .UserName }}<#000000>@</><#e06c75>{{ .HostName }}</> "
+    type = "session"
+
+        [blocks.segments.properties]
+        display_host = true
+
+    [[blocks.segments]]
+    background = "#e06c75"
+    foreground = "#ffffff"
+    powerline_symbol = ""
+    style = "powerline"
+    template = " ⠀"
+    type = "root"
+
+    [[blocks.segments]]
+    background = "#0077c2"
+    foreground = "#ffffff"
+    powerline_symbol = ""
+    style = "powerline"
+    template = "  {{ .Path }} "
+    type = "path"
+
+        [blocks.segments.properties]
+        folder_separator_icon = "/"
+        home_icon = "~"
+        max_depth = 2
+        style = "letter"
+
+    [[blocks.segments]]
+    background = "#fffb38"
+    background_templates = [
+        "{{ if or (.Working.Changed) (.Staging.Changed) }}#ff9248{{ end }}",
+        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f26d50{{ end }}",
+        "{{ if gt .Ahead 0 }}#f17c37{{ end }}",
+        "{{ if gt .Behind 0 }}#89d1dc{{ end }}"
+    ]
+    foreground = "#193549"
+    powerline_symbol = ""
+    style = "powerline"
+    template = " {{ .HEAD }}"
+    type = "git"
+
+        [blocks.segments.properties]
+        fetch_stash_count = true
+        fetch_status = true
+        fetch_upstream_icon = true
+
