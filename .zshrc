@@ -15,7 +15,7 @@ plug "$HOME/.config/zsh/aliases.zsh"
 
 # --- End ---
 compinit
-eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/theme.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/$OMP_CONFIG)"
 eval "$(zoxide init zsh)"
 cls
 
