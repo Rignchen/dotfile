@@ -6,7 +6,13 @@
       "segments": [
         {
           "background": "#fbfbfb",
+          "background_templates": [
+            "{{ if eq .Code 0 }}#fbfbfb{{ else }}#c22{{ end }}"
+          ],
           "foreground": "#0077c2",
+          "foreground_templates": [
+            "{{ if eq .Code 0 }}#0077c2{{ else }}#632020{{ end }}"
+          ],
           "leading_diamond": "\ue0b6",
           "properties": {
             "arch": "\uf303",
@@ -20,7 +26,7 @@
             "windows": "\uf17a"
           },
           "style": "diamond",
-          "template": "{{.Icon}} ",
+          "template": "{{ if eq .Code 0 }}{{.Icon}}{{ else }}{{ .Code }}{{ end }} ",
           "type": "os"
         },
         {
