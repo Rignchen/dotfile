@@ -72,7 +72,7 @@ type = "prompt"
     foreground = "#193549"
     powerline_symbol = ""
     style = "powerline"
-    template = " {{ .HEAD }}"
+    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }}{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }} "
     type = "git"
 
         [blocks.segments.properties]
