@@ -15,6 +15,7 @@
 	sync = !git stash && git pull && git push && git stash pop && echo "Synced successfully"
 	a = add . --patch
 	unstage = restore --staged
+	new = add -N
 [pull]
 	rebase = false
 [gpg]
