@@ -1,0 +1,18 @@
+# get the variable asked for
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    echo "Usage: copy [variable]"
+    echo "Other options:" [variable] | copy
+    echo "Copy the variable to the clipboard"
+    exit 1
+elif [ "$1" ]; then
+    COPY_VAR=$1
+else
+    COPY_VAR=$(cat)
+fi
+
+# copy the variable to the clipboard
+if [ "$(which wl-copy)" ]; then
+    wl-copy $(echo "$COPY_VAR")
+elif [ "$(which xclip)" ]; then
+    echo "$COPY_VAR" | xclip -selection clipboard
+fi
