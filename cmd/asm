@@ -1,0 +1,38 @@
+# This script will compile an .asm file into an executable one
+
+# ensure that the user has provided a file to compile
+if [ -z "$1" ]; then
+	echo "Please provide the name of the .asm file to compile"
+	exit 1
+fi
+
+# get the filename (without the extension)
+filename=$(echo $1 | cut -f 1 -d '.')
+
+# ensure that the file exists
+if [ ! -f $filename.asm ]; then
+	echo "The file $filename.asm does not exist"
+	exit 1
+fi
+
+# remove old files if they exist
+if [ -f $filename.o ]; then
+	rm $filename.o
+fi
+if [ -f $filename ]; then
+	rm $filename
+fi
+
+# compile the assembly
+nasm -f elf64 -o $filename.o $filename.asm
+ld -o $filename $filename.o
+
+# remove the temporary .o file
+rm $filename.o
+
+# print the result
+if [ -f $filename ]; then
+	echo "$filename"
+else
+	echo "An error occurred while compiling $filename.asm"
+fi
