@@ -5,6 +5,7 @@ alias "cd...=cd ../../.."
 alias "cd....=cd ../../../.."
 
 # ls
+alias "ls=ls --color=auto"
 alias "la=ls -laF"
 alias "ll=ls -lF"
 
