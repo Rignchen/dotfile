@@ -1,0 +1,16 @@
+{
+    "pylsp-all": {
+        "workspace_config": {
+            "pylsp": {
+                "plugins": {
+                    "pycodestyle": {
+                        "ignore": [
+                            "W191",
+                            "E501"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
