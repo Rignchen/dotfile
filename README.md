@@ -45,6 +45,10 @@ The config also use `oh my posh` for the visual theme
 ```bash
 curl -s https://ohmyposh.dev/install.sh | bash -s
 ```
+The history is stored using `atuin`
+```bash
+sudo depot i atuin
+```
 ### Hyprland
 Hyprland has a few dependencies, you need to install them
 ```bash
