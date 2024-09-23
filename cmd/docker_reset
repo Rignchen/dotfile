@@ -1,4 +1,4 @@
-# bash
+#!/bin/bash
 
 TARGZ_NAME=.docker_images.tar.gz
 

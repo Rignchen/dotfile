@@ -1,3 +1,4 @@
+#!/bin/bash
 # bash script to test docker images
 : '
 - test file provided & exists
