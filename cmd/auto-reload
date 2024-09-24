@@ -1,0 +1,66 @@
+#!/bin/bash
+# Watch the sha of files and restart the program if they change
+
+my_help() {
+	echo "Usage: $0 <program> <delay> <file_to_watch>..."
+}
+
+get_variables() {
+	# Check if there is enough arguments
+	if [ $# -lt 3 ]; then
+		my_help
+		exit 1
+	fi
+
+	# Check if the program exists
+	PROGRAM=$1
+	if ! command -v $PROGRAM &> /dev/null; then
+		echo "Error: $PROGRAM is not a valid program"
+		exit 2
+	fi
+
+	# Check if the delay is a number
+	DELAY=$2
+	if ! [[ $DELAY =~ ^[0-9]+$ ]]; then
+		echo "Error: $DELAY is not a valid number"
+		exit 3
+	fi
+
+	# Check if the files exist
+	_HAS_ERROR=0
+	FILES=${@:3}
+	for FILE in $FILES; do
+		if [ ! -f $FILE ]; then
+			echo "Error: $FILE is not a valid file"
+			_HAS_ERROR=1
+		fi
+	done
+	if [ $_HAS_ERROR -eq 1 ]; then
+		exit 4
+	fi
+}
+
+get_variables $@
+echo "Watching $PROGRAM for changes in $FILES every $DELAY seconds"
+
+set_sha() {
+	# Get the sha of the files
+	SHA=$(sha256sum $FILES | sha256sum | cut -d ' ' -f 1)
+}
+
+restart_program() {
+	# Restart the program
+	kill $(pgrep $1)
+	$1 &
+}
+
+while true
+do
+	set_sha
+	if [ "$SHA" != "$OLD_SHA" ]; then
+		OLD_SHA=$SHA
+		restart_program $PROGRAM
+	fi
+	sleep $DELAY
+done
+
