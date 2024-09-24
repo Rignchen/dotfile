@@ -93,9 +93,10 @@
         "scroll-step": 1
     },
     "custom/logo": {
-        "format": "  ",
+        "format": "{} ",
         "tooltip": false,
-        "on-click": "fuzzel &"
+        "on-click": "fuzzel &",
+        "exec": "$HOME/.script/os-logo.sh"
     },
     "battery": {
         "format": "{capacity}% {icon}",
