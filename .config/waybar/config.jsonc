@@ -13,6 +13,7 @@
     "modules-right": [
         "tray",
         "memory",
+         "backlight",
         "wireplumber",
         "network",
         "battery",
@@ -69,6 +70,13 @@
         "on-click-right": "~/.script/wifi/new.sh &",
         "interval": 5,
         "nospacing": 1
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [" "," "],
+        "tooltip-format": "{icon} Brightness : {}%",
+        "on-click": "brightnessctl s $(expr $(brightnessctl max) - $(brightnessctl g))",
+        "interval": 5
     },
     "wireplumber": {
         "format": "{icon}",
