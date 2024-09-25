@@ -1,3 +1,4 @@
+#!/bin/bash
 # get the variable asked for
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
     echo "Usage: copy [variable]"

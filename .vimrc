@@ -17,6 +17,8 @@ set ignorecase smartcase
 set hlsearch
 " use 4 spaces instead of tabs
 set expandtab shiftwidth=4 smarttab
+" make tabs 4 spaces wide
+set tabstop=4
 " deactivate mouse
 set mouse=
 " Go to the last position when opening a file

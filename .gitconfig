@@ -16,6 +16,9 @@
 	a = add . --patch
 	unstage = restore --staged
 	new = add -N
+	c = commit -m
+	d = diff -w
+	ds = d --staged .
 [pull]
 	rebase = false
 [gpg]

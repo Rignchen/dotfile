@@ -1,3 +1,4 @@
+#!/bin/bash
 # This script will compile an .asm file into an executable one
 
 # ensure that the user has provided a file to compile
