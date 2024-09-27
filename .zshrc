@@ -13,6 +13,9 @@ plug "$HOME/.config/zsh/env.zsh"
 plug "$HOME/.config/zsh/plugins.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
 
+# --- Config ---
+setopt correct
+
 # --- End ---
 autoload -Uz compinit && compinit
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/$OMP_CONFIG)"
