@@ -16,4 +16,6 @@ if [ "$(command -v wl-copy)" ]; then
     wl-copy $(echo "$COPY_VAR")
 elif [ "$(command -v xclip)" ]; then
     echo "$COPY_VAR" | xclip -selection clipboard
+elif [ "$(command -v clip.exe)" ]; then
+    echo "$COPY_VAR" | clip.exe
 fi
