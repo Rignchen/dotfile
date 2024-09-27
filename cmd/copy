@@ -12,8 +12,8 @@ else
 fi
 
 # copy the variable to the clipboard
-if [ "$(which wl-copy)" ]; then
+if [ "$(command -v wl-copy)" ]; then
     wl-copy $(echo "$COPY_VAR")
-elif [ "$(which xclip)" ]; then
+elif [ "$(command -v xclip)" ]; then
     echo "$COPY_VAR" | xclip -selection clipboard
 fi
