@@ -18,4 +18,7 @@ elif [ "$(command -v xclip)" ]; then
     echo "$COPY_VAR" | xclip -selection clipboard
 elif [ "$(command -v clip.exe)" ]; then
     echo "$COPY_VAR" | clip.exe
+else
+    echo "No copy software found on this machine"
+    exit 1
 fi
