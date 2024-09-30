@@ -80,3 +80,17 @@ type = "prompt"
 		fetch_status = true
 		fetch_upstream_icon = true
 
+[[blocks]]
+alignment = "right"
+type = "rprompt"
+overflow = "hidden"
+
+	[[blocks.segments]]
+	type = "executiontime"
+	style = "plain"
+	foreground = "#ffff00"
+	template = " {{ .FormattedMs }} "
+
+		[blocks.segments.properties]
+		threshold = 5000
+
