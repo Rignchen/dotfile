@@ -7,6 +7,7 @@ alias "cd....=cd ../../../.."
 # ls
 alias "la=ls -laF"
 alias "ll=ls -lF"
+command -v pnpm && alias "npm=pnpm"
 
 # os specific
 case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
