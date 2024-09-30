@@ -10,3 +10,5 @@ plug "marlonrichert/zsh-autocomplete"
 # app autocompletion
 plug "ryutok/rust-zsh-completions"
 
+# vi motion
+plug "jeffreytse/zsh-vi-mode"

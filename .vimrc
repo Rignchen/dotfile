@@ -26,6 +26,8 @@ autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+" Don't autho change line break character
+set nofixeol
 
 " shell tab completion {{{
 set wildmenu
