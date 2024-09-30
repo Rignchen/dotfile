@@ -16,7 +16,8 @@ set ignorecase smartcase
 " highlight search results
 set hlsearch
 " use 4 spaces instead of tabs
-set expandtab shiftwidth=4 smarttab
+set shiftwidth=4 smarttab
+"set expandtab
 " make tabs 4 spaces wide
 set tabstop=4
 " deactivate mouse
