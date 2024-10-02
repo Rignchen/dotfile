@@ -5,7 +5,7 @@
 	email = rinchendemort@gmail.com
 	signingkey = ~/.ssh/id_ed25519
 [alias]
-	get-url = !git remote get-url $(git config branch.$(git name-rev --name-only HEAD).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//'
+	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//'
 	last = log -1 HEAD
 	undo = reset HEAD~1
 	graph = log --all --graph --decorate --oneline
