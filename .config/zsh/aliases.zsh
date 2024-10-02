@@ -34,4 +34,6 @@ alias "mkdir=mkdir -p"
 alias "fetch=fastfetch || neofetch"
 alias "cls=clear && fetch"
 alias ":q=exit"
+command -v pnpm && alias "npm=pnpm"
+alias "docker_ps=docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}'"
 
