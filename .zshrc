@@ -8,10 +8,10 @@ fi
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # --- Load config files ---
-plug "$HOME/.config/zsh/fix.zsh"
 plug "$HOME/.config/zsh/env.zsh"
 plug "$HOME/.config/zsh/plugins.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
+plug "$HOME/.config/zsh/fix.zsh"
 
 # --- Config ---
 setopt correct
