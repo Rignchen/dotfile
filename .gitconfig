@@ -19,6 +19,7 @@
 	c = commit -m
 	d = diff -w
 	ds = d --staged .
+	zip = !git archive --format=zip --output ../$(basename $(pwd)).zip HEAD
 [pull]
 	rebase = false
 [gpg]
