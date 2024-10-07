@@ -10,7 +10,7 @@ alias "la=ls -laF"
 alias "ll=ls -lF"
 
 # os specific
-case $(cat /etc/os-release | grep "^ID=" | sed -e "s/^ID=//") in
+case $OS in
     arch)
         alias "pacman=sudo pacman"
         ;;
