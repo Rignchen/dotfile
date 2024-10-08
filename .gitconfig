@@ -12,7 +12,7 @@
 	current-branch = branch --show-current
 	s = status -s
 	sh = stash
-	sync = !git stash && git pull && git push && git stash pop && echo "Synced successfully"
+	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
 	a = add . --patch
 	unstage = restore --staged
 	new = add -N
