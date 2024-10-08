@@ -5,22 +5,25 @@
 	email = rinchendemort@gmail.com
 	signingkey = ~/.ssh/id_ed25519
 [alias]
+	# complex
 	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//'
+	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
+	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
+	zip = !git archive --format=zip --output ../$(basename $(pwd)).zip HEAD
+	# simple
+	graph = log --all --graph --decorate --oneline
 	last = log -1 HEAD
 	undo = reset HEAD~1
-	graph = log --all --graph --decorate --oneline
-	current-branch = branch --show-current
-	s = status -s
-	sh = stash
-	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
-	a = add . --patch
 	unstage = restore --staged
+	# short
+	a = add . --patch
 	new = add -N
 	c = commit -m
 	d = diff -w
-	ds = d --staged .
-	zip = !git archive --format=zip --output ../$(basename $(pwd)).zip HEAD
-	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
+	ds = d --staged
+	s = status -s
+	sh = stash
+	# unsorted
 [pull]
 	rebase = false
 [gpg]
