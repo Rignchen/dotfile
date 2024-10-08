@@ -20,6 +20,7 @@
 	d = diff -w
 	ds = d --staged .
 	zip = !git archive --format=zip --output ../$(basename $(pwd)).zip HEAD
+	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
 [pull]
 	rebase = false
 [gpg]
