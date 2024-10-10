@@ -9,7 +9,7 @@
 	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//'
 	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
 	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
-	zip = !git archive --format=zip --output ../$(basename $(pwd)).zip HEAD
+	zip = !"declare FILENAME; if [ -z $1 ]; then FILENAME=$(basename $(pwd)); else FILENAME=$1; fi; git archive --format=zip --output ../$FILENAME.zip HEAD; #"
 	# simple
 	graph = log --all --graph --decorate --oneline
 	last = log -1 HEAD
