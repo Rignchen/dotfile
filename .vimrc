@@ -56,6 +56,8 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-vinegar'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" indent with tabs, align with spaces
+Plug 'Thyrum/vim-stabs'
 
 call plug#end()
 " }}}
