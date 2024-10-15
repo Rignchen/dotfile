@@ -13,7 +13,7 @@ fi
 
 # copy the variable to the clipboard
 if [ "$(command -v wl-copy)" ]; then
-    wl-copy $(echo "$COPY_VAR")
+    wl-copy "$(echo "$COPY_VAR")"
 elif [ "$(command -v xclip)" ]; then
     echo "$COPY_VAR" | xclip -selection clipboard
 elif [ "$(command -v clip.exe)" ]; then
