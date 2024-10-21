@@ -10,6 +10,7 @@
 	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
 	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
 	zip = !"declare FILENAME; if [ -z \"$1\" ]; then FILENAME=\"$(basename $(pwd))\"; else FILENAME=\"$1\"; fi; git archive --format=zip --output \"../$FILENAME.zip\" HEAD; #"
+	update = !BOB=$(git branch --show-current) && git checkout $1 && git pull && git checkout $BOB && git merge
 	# simple
 	graph = log --all --graph --decorate --oneline
 	last = log -1 HEAD
