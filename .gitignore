@@ -1,2 +1,4 @@
+# Computer specific config
+.config/zsh/computer.zsh
 # IDE
 *.sw[pom]
