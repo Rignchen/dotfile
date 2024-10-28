@@ -1,3 +1,6 @@
+# --- COMPUTER SPECIFIC SETTINGS ---
+source $HOME/.config/zsh/computer.zsh
+
 # --- TMUX ---
 if [ -z "$TMUX" ]; then
     tmux attach || tmux
@@ -8,7 +11,6 @@ fi
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # --- Load config files ---
-plug "$HOME/.config/zsh/computer.zsh"
 plug "$HOME/.config/zsh/env.zsh"
 plug "$HOME/.config/zsh/plugins.zsh"
 plug "$HOME/.config/zsh/aliases.zsh"
