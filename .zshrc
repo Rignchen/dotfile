@@ -24,5 +24,6 @@ autoload -Uz compinit && compinit
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/$OMP_CONFIG)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(worm_hole init zsh --add wha)"
 cls
 
