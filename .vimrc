@@ -58,6 +58,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " indent with tabs, align with spaces
 Plug 'Thyrum/vim-stabs'
+" theme
+Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
 " }}}
@@ -124,6 +126,15 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+" }}}
+
+" THEME {{{
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
 " }}}
 
 " }}}
