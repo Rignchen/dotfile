@@ -23,6 +23,7 @@
 	d = diff -w
 	ds = d --staged
 	dv = difftool -y
+	dvs = dv --staged
 	s = status -s
 	sh = stash
 	# unsorted
