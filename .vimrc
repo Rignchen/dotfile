@@ -70,38 +70,6 @@ nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F2> :set number! relativenumber!<CR>
 nnoremap <tab><tab> :FZF<CR>
 
-" Disable "beginner" keys {{{
-
-" Left
-nnoremap <Left> :echo "No left for you!"<CR>
-vnoremap <Left> :<C-u>echo "No left for you!"<CR>
-inoremap <Left> <C-o>:echo "No left for you!"<CR>
-
-" Right
-nnoremap <Right> :echo "No right for you!"<CR>
-vnoremap <Right> :<C-u>echo "No right for you!"<CR>
-inoremap <Right> <C-o>:echo "No right for you!"<CR>
-
-" Up
-nnoremap <Up> :echo "No up for you!"<CR>
-vnoremap <Up> :<C-u>echo "No up for you!"<CR>
-" inoremap <Up> <C-o>:echo "No up for you!"<CR> we need up and down for lsp
-
-" Down
-nnoremap <Down> :echo "No down for you!"<CR>
-vnoremap <Down> :<C-u>echo "No down for you!"<CR>
-" inoremap <Down> <C-o>:echo "No down for you!"<CR> we need up and down for lsp
-
-" Home
-nnoremap <Home> :echo "No home for you!"<CR>
-vnoremap <Home> :<C-u>echo "No home for you!"<CR>
-
-" End
-nnoremap <End> :echo "No end for you!"<CR>
-vnoremap <End> :<C-u>echo "No end for you!"<CR>
-
-" }}}
-
 " }}}
 
 " VIMSCRIPT {{{
