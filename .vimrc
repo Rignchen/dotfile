@@ -74,8 +74,8 @@ nnoremap <tab><tab> :FZF<CR>
 
 " VIMSCRIPT {{{
 
-command! -nargs=0 Clear :normal Gd:0<Enter>dd<CR>
-"command! -nargs=0 WE :w<CR>:E<CR>
+command! -nargs=0 Clear :normal Gd1Gdd
+command! -nargs=0 WE :normal :w<CR>:E<CR>
 
 " LSP + completion {{{
 
