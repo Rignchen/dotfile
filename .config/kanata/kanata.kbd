@@ -1,0 +1,35 @@
+;; defsrc is still necessary
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc)
+(deflayermap (base-layer)
+  CapsLock  @caps ;; Escape    - ControlLeft
+  KeyA      @a    ;; KeyA      - MetaLeft
+  KeyS      @s	  ;; KeyS      - AltLeft
+  KeyD      @d    ;; KeyD      - ShiftLeft
+  KeyF      @f    ;; KeyF      - ControlRight
+  KeyJ      @j    ;; KeyJ      - ControlLeft
+  KeyK      @k    ;; KeyK      - ShiftRight
+  KeyL      @l    ;; KeyL      - AltRight
+  Semicolon @;    ;; Semicolon - MetaRight
+)
+
+(defvar
+  tap-time  200
+  hold-time 200
+)
+
+(defalias
+  caps (tap-hold $tap-time $hold-time Escape    ControlLeft )
+  a    (tap-hold $tap-time $hold-time KeyA      MetaLeft    )
+  s    (tap-hold $tap-time $hold-time KeyS      AltLeft     )
+  d    (tap-hold $tap-time $hold-time KeyD      ShiftLeft   )
+  f    (tap-hold $tap-time $hold-time KeyF      ControlRight)
+  j    (tap-hold $tap-time $hold-time KeyJ      ControlLeft )
+  k    (tap-hold $tap-time $hold-time KeyK      ShiftRight  )
+  l    (tap-hold $tap-time $hold-time KeyL      AltRight    )
+  ;    (tap-hold $tap-time $hold-time Semicolon MetaRight   )
+)
+
