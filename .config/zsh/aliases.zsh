@@ -23,7 +23,7 @@ case $OS in
         alias "apt=sudo apt"
         ;;
     nixos)
-        alias "nixpm=sudo vim /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+        alias "nixpm=sudo $EDITOR /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
         alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system"
         ;;
 esac
