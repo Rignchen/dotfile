@@ -1,0 +1,11 @@
+#!/bin/bash
+# rename all the files in the current folder to remove spaces and replace with underscores
+
+for file in *; do
+	NEW_NAME=`echo $file | tr ' ' '_'`
+	if [ "$file" != "$NEW_NAME" ]; then
+		echo "$file -> $NEW_NAME"
+		mv "$file" "$NEW_NAME"
+	fi
+done
+
