@@ -94,9 +94,11 @@
     },
     "custom/logo": {
         "format": "{} ",
+        "class": "{}",
         "tooltip": false,
         "on-click": "fuzzel &",
-        "exec": "$HOME/.script/os-logo.sh"
+        "exec": "$HOME/.script/os-logo.sh",
+        "return-type": "json"
     },
     "battery": {
         "format": "{capacity}% {icon}",

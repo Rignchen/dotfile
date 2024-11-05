@@ -77,7 +77,15 @@ window#waybar.hidden {
     margin-left: 5px;
     font-size: 15px;
     border-radius: 8px 0px 0px 8px;
-    color: #1793d1;
+}
+#custom-logo.arch {
+	color: #1793D1;
+}
+#custom-logo.nixos {
+	color: #7eb6e1
+}
+#custom-logo.linux {
+	color: #000000
 }
 
 #memory {
