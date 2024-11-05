@@ -38,32 +38,6 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " }}}
 
-" PLUGINS {{{
-call plug#begin('~/.vim/plugged')
-
-" github copilot
-Plug 'github/copilot.vim'
-" undo tree
-Plug 'mbbill/undotree'
-" lsp + completion
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Debugger
-Plug 'puremourning/vimspector'
-" file explorer
-Plug 'tpope/vim-vinegar'
-" fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" indent with tabs, align with spaces
-Plug 'Thyrum/vim-stabs'
-" theme
-Plug 'ghifarit53/tokyonight-vim'
-
-call plug#end()
-" }}}
-
 " MAPPINGS {{{
 
 nnoremap <F5> :UndotreeToggle<CR>
@@ -94,15 +68,6 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-" }}}
-
-" THEME {{{
-set termguicolors
-
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-
-colorscheme tokyonight
 " }}}
 
 " }}}

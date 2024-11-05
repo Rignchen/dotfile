@@ -27,6 +27,11 @@ There's the fzf plugin for vim wich require the fzf program to be installed
 ```bash
 sudo depot i fzf
 ```
+### Neovim
+There's the fzf plugin for neovim wich require the fzf program to be installed
+```bash
+sudo depot i fzf
+```
 ### Tmux
 The tmux config file require the use of a plugin manager ``tpm``
 ```bash
