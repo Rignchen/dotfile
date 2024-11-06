@@ -17,3 +17,6 @@
 ^/COPYING
 ^/\.stow-local-ignore
 
+# nix
+^/configuration\.nix
+
