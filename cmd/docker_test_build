@@ -55,7 +55,7 @@ fi
 #build and run
 docker build -t test_image -f $1 .
 if [ $? -eq 0 ]; then
-    docker run $DOCKER_FLAGS -d --name test_container test_image
+    docker run $DOCKER_FLAGS -P -d --name test_container test_image
     if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
         clear

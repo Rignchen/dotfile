@@ -2,15 +2,20 @@
 
 OS=$(cat /etc/os-release | grep "^ID=" | cut --delimiter "=" --fields 2) 
 
+declare LOGO
+
 case $OS in
 	arch) 
-		echo ""
+		LOGO=""
 		;; 
 	nixos) 
-		echo ""
-		;; 
+		LOGO=""
+		;;
 	*) 
-		echo ""
+		LOGO=""
+		OS="linux"
 		;;
 esac
+
+echo '{"text": "'$LOGO'", "class": "'$OS'"}'
 

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Ensure there's 2 arguments
+if [ "$#" -ne 2 ]; then
+	echo "Usage: $0 <local_image> <remote_image>"
+	exit 1
+fi
+
+# Ensure the local image exists
+if ! docker image inspect $1 &> /dev/null; then
+	echo "Local image $1 does not exist"
+	exit 1
+fi
+
+# Ensure the remote image does not exist
+if docker image inspect $2 &> /dev/null; then
+	echo "Remote image $2 already exists"
+	exit 1
+fi
+
+# Tag the local image with the remote image
+docker tag $1 $2
+
+# Push the remote image
+docker push $2
+
+# Remove the remote image
+docker rmi $2
+
