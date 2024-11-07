@@ -38,11 +38,6 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " }}}
 
-" VIMSCRIPT {{{
-
-command! -nargs=0 Clear :normal Gd1Gdd
-command! -nargs=0 WE :normal :w<CR>:E<CR>
-
 " LSP + completion {{{
 
 function! s:on_lsp_buffer_enabled() abort
@@ -59,8 +54,6 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
-
-" }}}
 
 " }}}
 
