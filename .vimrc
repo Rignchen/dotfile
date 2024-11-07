@@ -53,7 +53,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Debugger
 Plug 'puremourning/vimspector'
 " file explorer
-Plug 'tpope/vim-vinegar'
+Plug 'ptzz/lf.vim'
+Plug 'voldikss/vim-floaterm'
 " fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " indent with tabs, align with spaces
@@ -69,6 +70,7 @@ call plug#end()
 nnoremap <F5> :UndotreeToggle<CR>
 nnoremap <F2> :set number! relativenumber!<CR>
 nnoremap <tab><tab> :FZF<CR>
+noremap - :Lf<CR>
 
 " }}}
 
