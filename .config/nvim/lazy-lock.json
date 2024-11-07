@@ -2,14 +2,14 @@
   "asyncomplete-lsp.vim": { "branch": "master", "commit": "cc5247bc268fb2c79d8b127bd772514554efb3ee" },
   "asyncomplete.vim": { "branch": "master", "commit": "016590d2ca73cefe45712430e319a0ef004e2215" },
   "copilot.vim": { "branch": "release", "commit": "87038123804796ca7af20d1b71c3428d858a9124" },
-  "fzf": { "branch": "master", "commit": "d4d9b99879d7f870264d4e2e9358c81b5e59981d" },
+  "fzf": { "branch": "master", "commit": "4a85843bcf14490c75022b3f549b5467c31c7870" },
   "lazy.nvim": { "branch": "main", "commit": "b1134ab82ee4279e31f7ddf7e34b2a99eb9b7bc9" },
-  "tokyonight.nvim": { "branch": "main", "commit": "52d67cc5d18c30f618897134620c64a11208fcae" },
   "lf.vim": { "branch": "master", "commit": "80a2ef0b1632258c6f5bfce21524c3b3d949a774" },
+  "tokyonight.nvim": { "branch": "main", "commit": "ce91ba480070c95f40753e4663e32b4632ac6db3" },
   "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
   "vim-floaterm": { "branch": "master", "commit": "4e28c8dd0271e10a5f55142fb6fe9b1599ee6160" },
   "vim-lsp": { "branch": "master", "commit": "04428c920002ac7cfacbecacb070a8af57b455d0" },
   "vim-lsp-settings": { "branch": "master", "commit": "e608a9da13d9601e05c64c554db20519f41205fc" },
-  "vim-stabs": { "branch": "master", "commit": "66a4520c6221ca59904b93406f24304ecf894fb7" },
+  "vim-stabs": { "branch": "master", "commit": "66a4520c6221ca59904b93406f24304ecf894fb7" }
   "vimspector": { "branch": "master", "commit": "ecb4669e5641abc3099b5a0b907f15ba3ceabd02" }
 }
