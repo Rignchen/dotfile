@@ -11,10 +11,9 @@ return {
 
 			vim.keymap.set('n', '-', ':Lf<CR>')
 		end,
-	},
-	{
-		"toggleterm.nvim",
-		lazy = true, --this plugin can stay unloaded until it's called
+		dependencies = {
+			"toggleterm.nvim",
+		}
 	}
 }
 
