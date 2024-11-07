@@ -4,10 +4,10 @@
   "copilot.vim": { "branch": "release", "commit": "87038123804796ca7af20d1b71c3428d858a9124" },
   "fzf": { "branch": "master", "commit": "4a85843bcf14490c75022b3f549b5467c31c7870" },
   "lazy.nvim": { "branch": "main", "commit": "b1134ab82ee4279e31f7ddf7e34b2a99eb9b7bc9" },
-  "lf.vim": { "branch": "master", "commit": "80a2ef0b1632258c6f5bfce21524c3b3d949a774" },
+  "lf.nvim": { "branch": "master", "commit": "69ab1efcffee6928bf68ac9bd0c016464d9b2c8b" },
+  "toggleterm.nvim": { "branch": "main", "commit": "5969229c0352ff1ed7f6e24aba9c6554e1842939" },
   "tokyonight.nvim": { "branch": "main", "commit": "ce91ba480070c95f40753e4663e32b4632ac6db3" },
   "undotree": { "branch": "master", "commit": "78b5241191852ffa9bb5da5ff2ee033160798c3b" },
-  "vim-floaterm": { "branch": "master", "commit": "4e28c8dd0271e10a5f55142fb6fe9b1599ee6160" },
   "vim-lsp": { "branch": "master", "commit": "04428c920002ac7cfacbecacb070a8af57b455d0" },
   "vim-lsp-settings": { "branch": "master", "commit": "e608a9da13d9601e05c64c554db20519f41205fc" },
   "vim-stabs": { "branch": "master", "commit": "66a4520c6221ca59904b93406f24304ecf894fb7" }
