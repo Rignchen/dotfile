@@ -38,14 +38,6 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " }}}
 
-" MAPPINGS {{{
-
-nnoremap <F5> :UndotreeToggle<CR>
-nnoremap <F2> :set number! relativenumber!<CR>
-nnoremap <tab><tab> :FZF<CR>
-
-" }}}
-
 " VIMSCRIPT {{{
 
 command! -nargs=0 Clear :normal Gd1Gdd
