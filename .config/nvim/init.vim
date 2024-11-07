@@ -64,20 +64,6 @@ augroup END
 
 " }}}
 
-" FOLDING {{{
 
-" vim files. The fold level is determined by {{{ and }}}
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-
-" python files. The fold level is determined by indentation
-augroup filetype_python
-    autocmd!
-    autocmd FileType python setlocal foldmethod=indent
-augroup END
-
-" }}}
 
 
