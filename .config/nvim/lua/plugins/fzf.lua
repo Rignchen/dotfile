@@ -2,6 +2,9 @@ return {
 	{
 		"junegunn/fzf",
 		lazy = false,
-		-- fzf#install()
+		config = function()
+			vim.cmd('call fzf#install()')
+			vim.keymap.set('n', '<tab><tab>', ':FZF<CR>')
+		end,
 	}
 }
