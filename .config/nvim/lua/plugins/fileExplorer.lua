@@ -12,7 +12,7 @@ return {
 			vim.keymap.set('n', '-', ':Lf<CR>')
 		end,
 		dependencies = {
-			"toggleterm.nvim",
+			"akinsho/toggleterm.nvim",
 		}
 	}
 }
