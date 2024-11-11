@@ -7,35 +7,35 @@
 - open in editor
 - build image
 if successful:
-  - run container
-  if successful:
-     - clear + display dockerfile
-     - open in shell
-     - log container
-     - kill + remove container
-  - remove image
+	- run container
+	if successful:
+		- clear + display dockerfile
+		- open in shell
+		- log container
+		- kill + remove container
+	- remove image
 '
 
 
 # test if the user has provided a file
 if [ -z "$1" ]; then
-    echo "Usage: test_docker_build <Dockerfile> [shell=sh] [docker_flags ...]"
-    exit 1
+	echo "Usage: test_docker_build <Dockerfile> [shell=sh] [docker_flags ...]"
+	exit 1
 fi
 
 # test if the user has provided a shell
 if [ -z "$2" ]; then
-    SHELL="sh"
+	SHELL="sh"
 else
-    SHELL=$2
+	SHELL=$2
 fi
 
 # test if the user has provided docker flags
 # flags starts at $3 and goes to the end of the arguments
 if [ -z "$3" ]; then
-    DOCKER_FLAGS=""
+	DOCKER_FLAGS=""
 else
-    DOCKER_FLAGS="${@:3}"
+	DOCKER_FLAGS="${@:3}"
 fi
 
 # ensure the container and image do not exist
@@ -48,29 +48,29 @@ $EDITOR $1
 
 # test if the file exists
 if [ ! -f "$1" ]; then
-    echo "Error: $1 does not exist"
-    exit 1
+	echo "Error: $1 does not exist"
+	exit 1
 fi
 
 #build and run
 docker build -t test_image -f $1 .
 if [ $? -eq 0 ]; then
-    docker run $DOCKER_FLAGS -P -d --name test_container test_image
-    if [ $? -eq 0 ]; then
+	docker run $DOCKER_FLAGS -P -d --name test_container test_image
+	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
-        clear
-        cat $1
-        echo "===================== ^ FILE ^ ====================="
+		clear
+		cat $1
+		echo "===================== ^ FILE ^ ====================="
 # open in shell
-        docker exec -it test_container $SHELL
+		docker exec -it test_container $SHELL
 # log the container
-        echo "===================== ^ SHELL ^ ====================="
-        docker logs test_container
-        echo "===================== ^ LOGS ^ ====================="
+		echo "===================== ^ SHELL ^ ====================="
+		docker logs test_container
+		echo "===================== ^ LOGS ^ ====================="
 # remove the container
-        docker kill test_container
-        docker rm -f test_container
-    fi
-    docker image rm -f test_image
+		docker kill test_container
+		docker rm -f test_container
+	fi
+	docker image rm -f test_image
 fi
 

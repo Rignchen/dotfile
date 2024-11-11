@@ -3,8 +3,8 @@ source $HOME/.config/zsh/computer.zsh
 
 # --- TMUX ---
 if [ -z "$TMUX" ]; then
-    tmux attach || tmux
-    exit
+	tmux attach || tmux
+	exit
 fi
 
 # --- Load Plugin Manager ---

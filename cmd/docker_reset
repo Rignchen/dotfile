@@ -4,8 +4,8 @@ TARGZ_NAME=.docker_images.tar.gz
 
 # ensure the tar.gz file exists before proceeding
 if [ ! -f $TARGZ ]; then
-    echo "Docker image backup file not found! ($TARGZ)"
-    exit 1
+	echo "Docker image backup file not found! ($TARGZ)"
+	exit 1
 fi
 
 # stop all instances and remove all images
@@ -15,12 +15,12 @@ docker image rm $(docker image ls -aq)
 
 # querry images from tar.gz file
 if [ -f /tmp/$TARGZ_NAME ]; then
-    docker load -i /tmp/$TARGZ_NAME
+	docker load -i /tmp/$TARGZ_NAME
 fi
 if [ -f ~/$TARGZ_NAME ]; then
-    docker load -i ~/$TARGZ_NAME
+	docker load -i ~/$TARGZ_NAME
 fi
 if [ -f $TARGZ_NAME ]; then
-    docker load -i $TARGZ_NAME
+	docker load -i $TARGZ_NAME
 fi
 

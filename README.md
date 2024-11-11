@@ -21,7 +21,7 @@ Some of the configs require some additional programs to work
 The vim config file require the plugin manager ``Plug`` to be installed in order to install plugins
 ```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 There's the fzf plugin for vim wich require the fzf program to be installed
 ```bash

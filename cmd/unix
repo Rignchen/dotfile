@@ -3,17 +3,17 @@
 # If no argument is provided, use the current date/time
 if [ -z "$1" ]
 then
-  date +%s
+	date +%s
 else
-  # If the argument is a single Unix timestamp, convert it to "day month year hour:minutes"
-  if [[ $1 =~ ^[0-9]+$ ]] && [ -z "$2" ]
-  then
-    date -d @$1 "+%d %B %Y %H:%M"
-  else
-  	# Concatenate all arguments into a single string
-  	datetime="$*"
+	# If the argument is a single Unix timestamp, convert it to "day month year hour:minutes"
+	if [[ $1 =~ ^[0-9]+$ ]] && [ -z "$2" ]
+	then
+		date -d @$1 "+%d %B %Y %H:%M"
+	else
+		# Concatenate all arguments into a single string
+		datetime="$*"
 
-  	# Convert the provided date to a Unix timestamp
-  	date -d "$datetime" +%s
-  fi
+		# Convert the provided date to a Unix timestamp
+		date -d "$datetime" +%s
+	fi
 fi

@@ -11,21 +11,21 @@ alias "ll=ls -lF"
 
 # os specific
 case $OS in
-    arch)
-        alias "pacman=sudo pacman"
-        ;;
-    fedora)
-        alias "dnf=sudo dnf"
-        ;;
-    ubuntu)
-        alias "fd=fdfind"
-        alias "apt-get=sudo apt-get"
-        alias "apt=sudo apt"
-        ;;
-    nixos)
-        alias "nixpm=sudo $EDITOR /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
-        alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system"
-        ;;
+	arch)
+		alias "pacman=sudo pacman"
+		;;
+	fedora)
+		alias "dnf=sudo dnf"
+		;;
+	ubuntu)
+		alias "fd=fdfind"
+		alias "apt-get=sudo apt-get"
+		alias "apt=sudo apt"
+		;;
+	nixos)
+		alias "nixpm=sudo $EDITOR /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+		alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system"
+		;;
 esac
 
 # postgres
