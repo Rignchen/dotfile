@@ -17,6 +17,7 @@ vim.o.hlsearch = true
 
 -- make tabs 4 spaces wide
 vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
 -- deactivates mouse
 vim.o.mouse = ''
