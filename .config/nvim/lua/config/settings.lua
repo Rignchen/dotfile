@@ -18,6 +18,12 @@ vim.o.hlsearch = true
 -- make tabs 4 spaces wide
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.api.nvim_create_augroup('tab_settings', { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+	group = 'tab_settings',
+	pattern = 'cs',
+	command = 'setlocal expandtab'
+})
 
 -- deactivates mouse
 vim.o.mouse = ''
