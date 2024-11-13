@@ -2,3 +2,5 @@
 .config/zsh/computer.zsh
 # IDE
 *.sw[pom]
+# neovim plugin lock file
+/.config/nvim/lazy-lock.json
