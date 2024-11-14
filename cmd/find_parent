@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# ensure that the user has provided a filename
+if [ -z "$1" ]; then
+	echo "Usage: find_parent <filename> [<filename> ...]"
+	exit 1
+fi
+
+files=()
+
+find_file() {
+	# find the file in the current directory
+	for file in $@; do
+		if [ -f "$file" ]; then
+			files+=("$PWD/$file")
+		fi
+	done
+}
+
+# loop through the parent directories until the root directory is reached
+while [ "$PWD" != "/" ]; do
+	# find the file in the current directory
+	find_file "$@"
+	# move to the parent directory
+	cd ..
+done
+# find the file in the root directory
+find_file "$@"
+
+# print the list of files found
+if [ ${#files[@]} -eq 0 ]; then
+	echo "No files found"
+else
+	for file in "${files[@]}"; do
+		echo "$file"
+	done
+fi
+
