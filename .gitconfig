@@ -26,6 +26,7 @@
 	dvs = dv --staged
 	s = status -s
 	sh = stash
+	ca = commit --amend --no-edit
 	# unsorted
 [pull]
 	rebase = false
