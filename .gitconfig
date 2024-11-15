@@ -6,7 +6,7 @@
 	signingkey = ~/.ssh/id_ed25519
 [alias]
 	# complex
-	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//'
+	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//' | sed 's|git@ssh\\.dev\\.azure\\.com:v3/\\(.*\\)/\\(.*\\)/\\(.*\\)|https:\\/\\/dev.azure.com/\\1/\\2/_git/\\3|'
 	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
 	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
 	zip = !"declare FILENAME; if [ -z \"$1\" ]; then FILENAME=\"$(basename $(pwd))\"; else FILENAME=\"$1\"; fi; git archive --format=zip --output \"../$FILENAME.zip\" HEAD; #"
