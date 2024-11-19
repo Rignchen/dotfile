@@ -26,6 +26,7 @@
 				python-pkgs.requests
 			]))
 			dotnet-sdk
+			postgresql
 		## Misselanous
 			#files
 			lf
@@ -86,6 +87,15 @@
 		firefox.enable = true;
 		zsh.enable = true;
 	};
+	services.postgresql = {
+		enable = true;
+		ensureDatabases = [ "mydatabase" ];
+		authentication = pkgs.lib.mkOverride 10 ''
+			#type database  DBuser  auth-method
+			local all       all     trust
+		'';
+	};
+
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.rignchen = {
