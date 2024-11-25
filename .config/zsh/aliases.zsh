@@ -6,8 +6,14 @@ alias "cd....=cd ../../../.."
 
 # ls
 alias "ls=ls --color=auto"
+alias "ls.=ls .."
+alias "ls..=ls ../.."
 alias "la=ls -laF"
+alias "la.=la .."
+alias "la..=la ../.."
 alias "ll=ls -lF"
+alias "ll.=ll .."
+alias "ll..=ll ../.."
 
 # os specific
 case $OS in
