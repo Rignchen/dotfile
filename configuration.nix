@@ -25,6 +25,7 @@
 			(python3.withPackages (python-pkgs: with python-pkgs; [
 				debugpy
 				requests
+				regex
 			]))
 			dotnet-sdk
 			postgresql
