@@ -23,6 +23,7 @@
 			nodePackages.pnpm
 			jdk
 			(python3.withPackages (python-pkgs: with python-pkgs; [
+				debugpy
 				requests
 			]))
 			dotnet-sdk
