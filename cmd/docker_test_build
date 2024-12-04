@@ -17,7 +17,21 @@ if successful:
 '
 
 # make help message
-HELP="Usage: $(basename $0) <Dockerfile> [shell=sh] [docker_flags ...]
+HELP="Usage: $(basename $0) [flags] <Dockerfile> [shell=sh]
+Flags:
+  -v <host_path:container_path>  Mount volumes when creating a container
+"
+
+# extract the flags from the cli arguments
+BUILD_FLAG=""
+while getopts "v:" opt; do
+	case $opt in
+		v)
+			BUILD_FLAG+="--volume $OPTARG "
+			;;
+	esac
+done
+shift $((OPTIND -1))
 
 # test if the user has provided a file
 if [ -z "$1" ]; then
@@ -30,14 +44,6 @@ if [ -z "$2" ]; then
 	SHELL="sh"
 else
 	SHELL=$2
-fi
-
-# test if the user has provided docker flags
-# flags starts at $3 and goes to the end of the arguments
-if [ -z "$3" ]; then
-	DOCKER_FLAGS=""
-else
-	DOCKER_FLAGS="${@:3}"
 fi
 
 # ensure the container and image do not exist
@@ -57,7 +63,7 @@ fi
 #build and run
 docker build -t test_image -f $1 .
 if [ $? -eq 0 ]; then
-	docker run $DOCKER_FLAGS -P -d --name test_container test_image
+	docker run $BUILD_FLAG -P -d --name test_container test_image
 	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
 		clear
