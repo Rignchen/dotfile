@@ -19,6 +19,7 @@ if successful:
 # make help message
 HELP="Usage: $(basename $0) [flags] <Dockerfile> [shell=sh]
 Flags:
+  -e <key=value>                 Set environment variables
   -h                             Display this help message
   -n <name>                      Name of the container and image (default: docker_test_build)
   -v <host_path:container_path>  Mount volumes when creating a container
@@ -27,8 +28,11 @@ Flags:
 # extract the flags from the cli arguments
 BUILD_FLAG=""
 FLAG_NAME="docker_test_build"
-while getopts "hn:v:" opt; do
+while getopts "e:hn:v:" opt; do
 	case $opt in
+		e)
+			BUILD_FLAG+="--env $OPTARG "
+			;;
 		h)
 			echo "$HELP"
 			exit 0
