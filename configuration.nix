@@ -22,8 +22,10 @@
 			nodejs
 			nodePackages.pnpm
 			jdk
-			(python3.withPackages (python-pkgs: [
-				python-pkgs.requests
+			(python3.withPackages (python-pkgs: with python-pkgs; [
+				debugpy
+				requests
+				regex
 			]))
 			dotnet-sdk
 			postgresql
@@ -63,6 +65,7 @@
 			#lock screen
 			wlogout
 			swaylock-effects
+			hypridle
 			#sound
 			playerctl
 			pamixer # audio manager
@@ -71,7 +74,6 @@
 			grim
 			slurp
 			brightnessctl
-			hypridle
 		## Dependencies
 			openssl
 	];
