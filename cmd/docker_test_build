@@ -16,10 +16,12 @@ if successful:
 	- remove image
 '
 
+# make help message
+HELP="Usage: $(basename $0) <Dockerfile> [shell=sh] [docker_flags ...]
 
 # test if the user has provided a file
 if [ -z "$1" ]; then
-	echo "Usage: test_docker_build <Dockerfile> [shell=sh] [docker_flags ...]"
+	echo "$HELP" >&2
 	exit 1
 fi
 
@@ -48,7 +50,7 @@ $EDITOR $1
 
 # test if the file exists
 if [ ! -f "$1" ]; then
-	echo "Error: $1 does not exist"
+	echo "Error: $1 does not exist" >&2
 	exit 1
 fi
 
