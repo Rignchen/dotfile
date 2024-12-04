@@ -19,15 +19,25 @@ if successful:
 # make help message
 HELP="Usage: $(basename $0) [flags] <Dockerfile> [shell=sh]
 Flags:
+  -h                             Display this help message
   -v <host_path:container_path>  Mount volumes when creating a container
 "
 
 # extract the flags from the cli arguments
 BUILD_FLAG=""
-while getopts "v:" opt; do
+FLAG_NAME="docker_test_build"
+while getopts "hv:" opt; do
 	case $opt in
+		h)
+			echo "$HELP"
+			exit 0
+			;;
 		v)
 			BUILD_FLAG+="--volume $OPTARG "
+			;;
+		\?)
+			echo "$HELP" >&2
+			exit 1
 			;;
 	esac
 done
