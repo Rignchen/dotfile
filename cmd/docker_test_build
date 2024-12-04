@@ -20,17 +20,21 @@ if successful:
 HELP="Usage: $(basename $0) [flags] <Dockerfile> [shell=sh]
 Flags:
   -h                             Display this help message
+  -n <name>                      Name of the container and image (default: docker_test_build)
   -v <host_path:container_path>  Mount volumes when creating a container
 "
 
 # extract the flags from the cli arguments
 BUILD_FLAG=""
 FLAG_NAME="docker_test_build"
-while getopts "hv:" opt; do
+while getopts "hn:v:" opt; do
 	case $opt in
 		h)
 			echo "$HELP"
 			exit 0
+			;;
+		n)
+			FLAG_NAME=$OPTARG
 			;;
 		v)
 			BUILD_FLAG+="--volume $OPTARG "
@@ -57,9 +61,9 @@ else
 fi
 
 # ensure the container and image do not exist
-docker kill test_container
-docker rm -f test_container
-docker image rm -f test_image
+docker kill $FLAG_NAME
+docker rm -f $FLAG_NAME
+docker image rm -f $FLAG_NAME
 
 # open in editor
 $EDITOR $1
@@ -71,24 +75,24 @@ if [ ! -f "$1" ]; then
 fi
 
 #build and run
-docker build -t test_image -f $1 .
+docker build -t $FLAG_NAME -f $1 .
 if [ $? -eq 0 ]; then
-	docker run $BUILD_FLAG -P -d --name test_container test_image
+	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $FLAG_NAME
 	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
 		clear
 		cat $1
 		echo "===================== ^ FILE ^ ====================="
 # open in shell
-		docker exec -it test_container $SHELL
+		docker exec -it $FLAG_NAME $SHELL
 # log the container
 		echo "===================== ^ SHELL ^ ====================="
-		docker logs test_container
+		docker logs $FLAG_NAME
 		echo "===================== ^ LOGS ^ ====================="
 # remove the container
-		docker kill test_container
-		docker rm -f test_container
+		docker kill $FLAG_NAME
+		docker rm -f $FLAG_NAME
 	fi
-	docker image rm -f test_image
+	docker image rm -f $FLAG_NAME
 fi
 
