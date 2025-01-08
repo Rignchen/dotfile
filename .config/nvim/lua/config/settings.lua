@@ -2,9 +2,6 @@
 vim.o.number = true
 vim.o.relativenumber = true
 
--- show line numbers in directories
-vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
-
 -- don't wrap lines
 vim.o.wrap = false
 
