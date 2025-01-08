@@ -2,6 +2,9 @@
 vim.o.number = true
 vim.o.relativenumber = true
 
+-- keep a few lines above and below the cursor
+vim.o.scrolloff = 5
+
 -- don't wrap lines
 vim.o.wrap = false
 
