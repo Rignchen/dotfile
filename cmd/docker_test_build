@@ -57,7 +57,8 @@ done
 shift $((OPTIND -1))
 
 # test if the user has provided a file
-if [ -z "$1" ]; then
+DOCKERFILE=$1
+if [ -z "$DOCKERFILE" ]; then
 	echo "$HELP" >&2
 	exit 1
 fi
@@ -68,22 +69,22 @@ docker rm -f $FLAG_NAME
 docker image rm -f $FLAG_NAME
 
 # open in editor
-$EDITOR $1
+$EDITOR $DOCKERFILE
 
 # test if the file exists
-if [ ! -f "$1" ]; then
-	echo "Error: $1 does not exist" >&2
+if [ ! -f "$DOCKERFILE" ]; then
+	echo "Error: $DOCKERFILE does not exist" >&2
 	exit 1
 fi
 
 #build and run
-docker build -t $FLAG_NAME -f $1 .
+docker build -t $FLAG_NAME -f $DOCKERFILE .
 if [ $? -eq 0 ]; then
 	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $FLAG_NAME
 	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
 		clear
-		cat $1
+		cat $DOCKERFILE
 		echo "===================== ^ FILE ^ ====================="
 # open in shell
 		docker exec -it $FLAG_NAME $SHELL
