@@ -21,14 +21,14 @@
 	a = add . --patch
 	new = add -N
 	c = commit -m
+	ca = commit --amend --no-edit
 	d = diff -w
+	dc = diff --compact-summary
 	ds = d --staged
 	dv = difftool -y
 	dvs = dv --staged
 	s = status -s
 	sh = stash
-	ca = commit --amend --no-edit
-	# unsorted
 [pull]
 	rebase = false
 [gpg]
