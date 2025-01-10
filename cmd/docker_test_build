@@ -17,18 +17,20 @@ if successful:
 '
 
 # make help message
-HELP="Usage: $(basename $0) [flags] <Dockerfile> [shell=sh]
+HELP="Usage: $(basename $0) [flags] <Dockerfile>
 Flags:
   -e <key=value>                 Set environment variables
   -h                             Display this help message
   -n <name>                      Name of the container and image (default: docker_test_build)
   -v <host_path:container_path>  Mount volumes when creating a container
+  -s <shell>                     Shell to open in the container (default: sh)
 "
 
 # extract the flags from the cli arguments
 BUILD_FLAG=""
 FLAG_NAME="docker_test_build"
-while getopts "e:hn:v:" opt; do
+SHELL="sh"
+while getopts "e:hn:v:s:" opt; do
 	case $opt in
 		e)
 			BUILD_FLAG+="--env $OPTARG "
@@ -43,6 +45,9 @@ while getopts "e:hn:v:" opt; do
 		v)
 			BUILD_FLAG+="--volume $OPTARG "
 			;;
+		s)
+			SHELL=$OPTARG
+			;;
 		\?)
 			echo "$HELP" >&2
 			exit 1
@@ -55,13 +60,6 @@ shift $((OPTIND -1))
 if [ -z "$1" ]; then
 	echo "$HELP" >&2
 	exit 1
-fi
-
-# test if the user has provided a shell
-if [ -z "$2" ]; then
-	SHELL="sh"
-else
-	SHELL=$2
 fi
 
 # ensure the container and image do not exist
