@@ -77,10 +77,16 @@ if [ ! -f "$DOCKERFILE" ]; then
 	exit 1
 fi
 
-#build and run
-docker build -t $FLAG_NAME -f $DOCKERFILE .
-if [ $? -eq 0 ]; then
-	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $FLAG_NAME
+build_and_run() {
+	docker build -t $FLAG_NAME -f $1 .
+	if [ $? -eq 0 ]; then
+		run_image $FLAG_NAME
+		docker image rm -f $1
+	fi
+}
+
+run_image() {
+	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $1
 	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
 		clear
@@ -96,6 +102,7 @@ if [ $? -eq 0 ]; then
 		docker kill $FLAG_NAME
 		docker rm -f $FLAG_NAME
 	fi
-	docker image rm -f $FLAG_NAME
-fi
+}
+
+build_and_run $DOCKERFILE
 
