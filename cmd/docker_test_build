@@ -2,7 +2,7 @@
 # bash script to quickly build and run a shell in a docker container
 
 # make help message
-HELP="Usage: $(basename $0) [flags] <Dockerfile>
+HELP="Usage: $(basename $0) [flags] [<Dockerfile> = Dockerfile]
 Flags:
   -e <key=value>                 Set environment variables
   -h                             Display this help message
@@ -15,6 +15,7 @@ Flags:
 BUILD_FLAG=""
 FLAG_NAME="docker_test_build"
 SHELL="sh"
+DOCKERFILE="Dockerfile"
 while getopts "e:hn:v:s:" opt; do
 	case $opt in
 		e)
@@ -41,11 +42,9 @@ while getopts "e:hn:v:s:" opt; do
 done
 shift $((OPTIND -1))
 
-# test if the user has provided a file
-DOCKERFILE=$1
-if [ -z "$DOCKERFILE" ]; then
-	echo "$HELP" >&2
-	exit 1
+# check if the dockerfile is provided
+if [ $# -gt 0 ]; then
+	DOCKERFILE=$1
 fi
 
 # open in editor
