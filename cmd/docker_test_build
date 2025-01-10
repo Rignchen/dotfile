@@ -1,20 +1,5 @@
 #!/bin/bash
-# bash script to test docker images
-: '
-- test file provided & exists
-- test shell provided | set to sh
-- kill + remove container + image
-- open in editor
-- build image
-if successful:
-	- run container
-	if successful:
-		- clear + display dockerfile
-		- open in shell
-		- log container
-		- kill + remove container
-	- remove image
-'
+# bash script to quickly build and run a shell in a docker container
 
 # make help message
 HELP="Usage: $(basename $0) [flags] <Dockerfile>
@@ -94,14 +79,14 @@ run_image() {
 	
 	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $1
 	if [ $? -eq 0 ]; then
-# display the content of the dockerfile do it's visible from the shell
 		clear
+		# display the content of the dockerfile so it's visible from the shell
 		cat $DOCKERFILE
 		echo "===================== ^ FILE ^ ====================="
-# open in shell
+		# open in shell
 		docker exec -it $FLAG_NAME $SHELL
-# log the container
 		echo "===================== ^ SHELL ^ ====================="
+		# log the container
 		docker logs $FLAG_NAME
 		echo "===================== ^ LOGS ^ ====================="
 		remove_container $FLAG_NAME
