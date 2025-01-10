@@ -63,11 +63,6 @@ if [ -z "$DOCKERFILE" ]; then
 	exit 1
 fi
 
-# ensure the container and image do not exist
-docker kill $FLAG_NAME
-docker rm -f $FLAG_NAME
-docker image rm -f $FLAG_NAME
-
 # open in editor
 $EDITOR $DOCKERFILE
 
@@ -78,14 +73,25 @@ if [ ! -f "$DOCKERFILE" ]; then
 fi
 
 build_and_run() {
+	remove_image() {
+		docker image rm -f $1
+	}
+	remove_image $FLAG_NAME
+	
 	docker build -t $FLAG_NAME -f $1 .
 	if [ $? -eq 0 ]; then
 		run_image $FLAG_NAME
-		docker image rm -f $1
+		remove_image $FLAG_NAME
 	fi
 }
 
 run_image() {
+	remove_container() {
+		docker kill $1
+		docker rm -f $1
+	}
+	remove_container $FLAG_NAME
+	
 	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $1
 	if [ $? -eq 0 ]; then
 # display the content of the dockerfile do it's visible from the shell
@@ -98,9 +104,7 @@ run_image() {
 		echo "===================== ^ SHELL ^ ====================="
 		docker logs $FLAG_NAME
 		echo "===================== ^ LOGS ^ ====================="
-# remove the container
-		docker kill $FLAG_NAME
-		docker rm -f $FLAG_NAME
+		remove_container $FLAG_NAME
 	fi
 }
 
