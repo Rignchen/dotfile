@@ -39,3 +39,5 @@
 	tool = vimdiff
 [advice]
 	addEmptyPathspec = false
+[merge]
+	tool = vimdiff
