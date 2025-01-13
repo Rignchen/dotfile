@@ -1,4 +1,6 @@
 set hidden
 
 map <enter> open
+map <esc> quit
+map - updir
 
