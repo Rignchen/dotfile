@@ -37,3 +37,5 @@
 	autoSetupRemote = true
 [diff]
 	tool = vimdiff
+[advice]
+	addEmptyPathspec = false
