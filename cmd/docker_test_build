@@ -11,15 +11,17 @@ Flags:
   -s <shell>                     Shell to open in the container (default: sh)
 "
 
-# extract the flags from the cli arguments
-BUILD_FLAG=""
+# default values for the cli arguments
+RUN_FLAG=""
 FLAG_NAME="docker_test_build"
 SHELL="sh"
 DOCKERFILE="Dockerfile"
+
+# extract the flags from the cli arguments
 while getopts "e:hn:v:s:" opt; do
 	case $opt in
 		e)
-			BUILD_FLAG+="--env $OPTARG "
+			RUN_FLAG+="--env $OPTARG "
 			;;
 		h)
 			echo "$HELP"
@@ -29,7 +31,7 @@ while getopts "e:hn:v:s:" opt; do
 			FLAG_NAME=$OPTARG
 			;;
 		v)
-			BUILD_FLAG+="--volume $OPTARG "
+			RUN_FLAG+="--volume $OPTARG "
 			;;
 		s)
 			SHELL=$OPTARG
@@ -76,7 +78,7 @@ run_image() {
 	}
 	remove_container $FLAG_NAME
 	
-	docker run $BUILD_FLAG -P -d --name $FLAG_NAME $1
+	docker run $RUN_FLAG -P -d --name $FLAG_NAME $1
 	if [ $? -eq 0 ]; then
 		clear
 		# display the content of the dockerfile so it's visible from the shell
