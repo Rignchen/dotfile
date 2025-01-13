@@ -8,17 +8,19 @@ Flags:
   -h                             Display this help message
   -n <name>                      Name of the container and image (default: docker_test_build)
   -v <host_path:container_path>  Mount volumes when creating a container
+  -t <target>                    Build a specific stage of the multi-stage Dockerfile
   -s <shell>                     Shell to open in the container (default: sh)
 "
 
 # default values for the cli arguments
+ BUILD_FLAG=""
 RUN_FLAG=""
 FLAG_NAME="docker_test_build"
 SHELL="sh"
 DOCKERFILE="Dockerfile"
 
 # extract the flags from the cli arguments
-while getopts "e:hn:v:s:" opt; do
+while getopts "e:hn:v:s:t:" opt; do
 	case $opt in
 		e)
 			RUN_FLAG+="--env $OPTARG "
@@ -35,6 +37,9 @@ while getopts "e:hn:v:s:" opt; do
 			;;
 		s)
 			SHELL=$OPTARG
+			;;
+		t)
+			BUILD_FLAG+="--target $OPTARG "
 			;;
 		\?)
 			echo "$HELP" >&2
@@ -64,7 +69,7 @@ build_and_run() {
 	}
 	remove_image $FLAG_NAME
 	
-	docker build -t $FLAG_NAME -f $1 .
+	docker build $BUILD_FLAG -t $FLAG_NAME -f $1 .
 	if [ $? -eq 0 ]; then
 		run_image $FLAG_NAME
 		remove_image $FLAG_NAME
