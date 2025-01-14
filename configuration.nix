@@ -29,6 +29,7 @@
 			]))
 			dotnet-sdk
 			postgresql
+			zig
 		## Misselanous
 			#files
 			lf
