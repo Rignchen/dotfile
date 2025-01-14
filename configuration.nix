@@ -90,13 +90,19 @@
 		firefox.enable = true;
 		zsh.enable = true;
 	};
-	services.postgresql = {
-		enable = true;
-		ensureDatabases = [ "mydatabase" ];
-		authentication = pkgs.lib.mkOverride 10 ''
-			#type database  DBuser  auth-method
-			local all       all     trust
-		'';
+	services = {
+		kanata = {
+			enable = true;
+			keyboards.internalKeyboard.config = (builtins.readFile /home/rignchen/.config/kanata/kanata.kbd );
+		};
+		postgresql = {
+			enable = true;
+			ensureDatabases = [ "mydatabase" ];
+			authentication = pkgs.lib.mkOverride 10 ''
+				#type database  DBuser  auth-method
+				local all       all     trust
+			'';
+		};
 	};
 
 

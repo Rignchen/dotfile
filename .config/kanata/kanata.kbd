@@ -1,8 +1,4 @@
 ;; defsrc is still necessary
-(defcfg
-  process-unmapped-keys yes
-)
-
 (defsrc)
 (deflayermap (base-layer)
   CapsLock  @caps ;; Escape    - ControlLeft
