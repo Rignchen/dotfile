@@ -93,7 +93,10 @@
 	services = {
 		kanata = {
 			enable = true;
-			keyboards.internalKeyboard.config = (builtins.readFile /home/rignchen/.config/kanata/kanata.kbd );
+			keyboards.internalKeyboard = {
+				extraDefCfg = "process-unmapped-keys yes";
+				config = (builtins.readFile /home/rignchen/.config/kanata/kanata.kbd );
+			};
 		};
 		postgresql = {
 			enable = true;
