@@ -167,7 +167,7 @@
 	};
 
 	# Enable experimental features
-	nix.settings.experimental-features = [ "nix-command" ];
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	# Enable sound with pipewire.
 	hardware.pulseaudio.enable = false;
