@@ -30,7 +30,7 @@ case $OS in
 		;;
 	nixos)
 		alias "nixpm=sudo $EDITOR /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
-		alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system"
+		alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system && sudo nixos-rebuild switch"
 		alias "nix-shell=nix-shell --command zsh"
 		;;
 esac
