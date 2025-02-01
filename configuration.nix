@@ -7,6 +7,8 @@
 {
 	# List packages installed in system profile. To search, run: `nix search wget`
 	environment.systemPackages = with pkgs; [
+		## NIX
+			home-manager
 		## Dev
 			#ide
 			vim
@@ -121,11 +123,12 @@
 		];
 		packages = with pkgs; [];
 	};
+	home-manager.useUserPackages = true;
 
-	imports =
-		[ # Include the results of the hardware scan.
-			./hardware-configuration.nix
-		];
+	imports = [
+		./hardware-configuration.nix
+		<home-manager/nixos>
+	];
 
 	networking.hostName = "nixos"; # Define your hostname.
 	# networking.wireless.enable = true;	# Enables wireless support via wpa_supplicant.
