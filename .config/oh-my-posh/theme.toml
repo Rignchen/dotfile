@@ -1,6 +1,6 @@
 console_title_template = "{{.UserName}}@{{.HostName}} : {{.Folder}}"
+version = 3
 final_space = true
-version = 2
 
 [[blocks]]
 alignment = "left"
