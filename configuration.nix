@@ -12,70 +12,26 @@
 		## Dev
 			#ide
 			vim
-			neovim
 			#dev tools
 			git
-			tmux
 			docker
-			kanata
-			#languages
-			gcc
-			rustup
-			nodejs
-			nodePackages.pnpm
-			jdk
-			(python3.withPackages (python-pkgs: with python-pkgs; [
-				debugpy
-				requests
-				regex
-			]))
-			dotnet-sdk
-			postgresql
-			zig
 		## Misselanous
 			#files
-			lf
 			tree
-			zoxide
-			fzf
-			fd
-			#dotfiles
-			stow
 			#shell
 			kitty
-			zsh
-			oh-my-posh
-			atuin
-			fastfetch
 			wl-clipboard
 			nixos-shell
 			#app gui
-			discord
-			libreoffice-qt
-			obs-studio
-			rofi # app launcher
-			pinta # litteraly paint.net for linux
+			rofi
 			#app cli
-			pass
-			gh # github cli
-			glow # markdown viewer
-			slides # markdown - powerpoint viewer
-			tldr
 			zip
 			unzip
 		## Hyprland
-			fuzzel
-			#lock screen
-			wlogout
-			swaylock-effects
-			hypridle
 			#sound
 			playerctl
 			pamixer # audio manager
 			#screen
-			waybar
-			grim
-			slurp
 			brightnessctl
 		## Dependencies
 			openssl
