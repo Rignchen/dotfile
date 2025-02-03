@@ -47,6 +47,7 @@
 			glow # markdown viewer
 			slides # markdown - powerpoint viewer
 			tldr
+			ripgrep
 		## Desktop
 			waybar
 			grim # screenshot
