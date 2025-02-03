@@ -29,7 +29,7 @@ case $OS in
 		alias "apt=sudo apt"
 		;;
 	nixos)
-		alias "nixpm=sudo $EDITOR /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
+		alias "nixpm=$EDITOR ~/dotfile/configuration.nix && sudo cp ~/dotfile/configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch"
 		alias "nix-rm-old=sudo nix profile wipe-history --profile /nix/var/nix/profiles/system && sudo nixos-rebuild switch"
 		alias "nix-shell=nix-shell --command zsh"
 		;;
