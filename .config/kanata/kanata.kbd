@@ -3,7 +3,7 @@
 (deflayermap (base-layer)
   CapsLock  @caps ;; Escape    - ControlLeft
   KeyA      @a    ;; KeyA      - MetaLeft
-  KeyS      @s	  ;; KeyS      - AltLeft
+  KeyS      @s    ;; KeyS      - AltLeft
   KeyD      @d    ;; KeyD      - ShiftLeft
   KeyF      @f    ;; KeyF      - ControlRight
   KeyJ      @j    ;; KeyJ      - ControlLeft
