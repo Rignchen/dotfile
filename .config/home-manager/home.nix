@@ -49,7 +49,9 @@
 			tldr
 			ripgrep
 		## Desktop
+			wl-clip-persist
 			waybar
+			# screenshot
 			grim # screenshot
 			slurp # select part of screen
 			#lock screen

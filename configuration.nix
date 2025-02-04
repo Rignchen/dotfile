@@ -23,7 +23,7 @@
 			wl-clipboard
 			nixos-shell
 			#app gui
-			rofi
+			rofi # textual list of options where one or more can be selected
 			#app cli
 			zip
 			unzip
