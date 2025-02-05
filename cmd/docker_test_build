@@ -13,11 +13,12 @@ Flags:
 "
 
 # default values for the cli arguments
- BUILD_FLAG=""
+BUILD_FLAG=""
 RUN_FLAG=""
 FLAG_NAME="docker_test_build"
 SHELL="sh"
 DOCKERFILE="Dockerfile"
+DOCKER_COMMAND="docker"
 
 # extract the flags from the cli arguments
 while getopts "e:hn:v:s:t:" opt; do
@@ -65,11 +66,11 @@ fi
 
 build_and_run() {
 	remove_image() {
-		docker image rm -f $1
+		$DOCKER_COMMAND image rm -f $1
 	}
 	remove_image $FLAG_NAME
 	
-	docker build $BUILD_FLAG -t $FLAG_NAME -f $1 .
+	$DOCKER_COMMAND build $BUILD_FLAG -t $FLAG_NAME -f $1 .
 	if [ $? -eq 0 ]; then
 		run_image $FLAG_NAME
 		remove_image $FLAG_NAME
@@ -78,22 +79,22 @@ build_and_run() {
 
 run_image() {
 	remove_container() {
-		docker kill $1
-		docker rm -f $1
+		$DOCKER_COMMAND kill $1
+		$DOCKER_COMMAND rm -f $1
 	}
 	remove_container $FLAG_NAME
 	
-	docker run $RUN_FLAG -P -d --name $FLAG_NAME $1
+	$DOCKER_COMMAND run $RUN_FLAG -P -d --name $FLAG_NAME $1
 	if [ $? -eq 0 ]; then
 		clear
 		# display the content of the dockerfile so it's visible from the shell
 		cat $DOCKERFILE
 		echo "===================== ^ FILE ^ ====================="
 		# open in shell
-		docker exec -it $FLAG_NAME $SHELL
+		$DOCKER_COMMAND exec -it $FLAG_NAME $SHELL
 		echo "===================== ^ SHELL ^ ====================="
 		# log the container
-		docker logs $FLAG_NAME
+		$DOCKER_COMMAND logs $FLAG_NAME
 		echo "===================== ^ LOGS ^ ====================="
 		remove_container $FLAG_NAME
 	fi
