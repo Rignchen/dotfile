@@ -16,7 +16,7 @@
 	drop-ignored=!"TEMP=$(git stash --include-untracked) && git stash --all && git stash drop stash@{0} && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi"
 	# simple
 	graph = log --all --graph --decorate --oneline
-	last = log -1 HEAD
+	last = show --name-only
 	undo = reset HEAD~1
 	unstage = restore --staged
 	# short
