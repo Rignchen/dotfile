@@ -8,14 +8,15 @@
 	# complex
 	get-url = !git remote get-url $(git config branch.$(git branch --show-current).remote) | sed 's/^git@github.com:/https:\\/\\/github.com\\//' | sed 's|git@ssh\\.dev\\.azure\\.com:v3/\\(.*\\)/\\(.*\\)/\\(.*\\)|https:\\/\\/dev.azure.com/\\1/\\2/_git/\\3|'
 	gh = !gh repo create $(basename $(pwd)) --public && git remote add origin git@github.com:Rignchen/$(basename $(pwd)) && git push -u origin main
+	gh-fork = !gh repo fork $(git remote get-url origin | sed 's/^git@github\\.com://' | sed 's/\\.git$//') --clone=false --fork-name=$(basename $(pwd)) && git remote rename origin upstream && git remote add origin git@github.com:Rignchen/$(basename $(pwd)).git && git push
 	sync = "!TEMP=$(git stash) && git pull && git push && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi && echo \"Synced successfully\""
 	zip = !"declare FILENAME; if [ -z \"$1\" ]; then FILENAME=\"$(basename $(pwd))\"; else FILENAME=\"$1\"; fi; git archive --format=zip --output \"../$FILENAME.zip\" HEAD; #"
 	update = !BOB=$(git branch --show-current) && git checkout $1 && git pull && git checkout $BOB && git merge
 	temp = !"git add . && git stash save 'temp commit' && git checkout stash@{0}"
-	drop-ignored=!"TEMP=$(git stash) && git stash --all && git stash drop stash@{0} && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi"
+	drop-ignored=!"TEMP=$(git stash --include-untracked) && git stash --all && git stash drop stash@{0} && if [ \"$TEMP\" != \"No local changes to save\" ]; then git stash pop; fi"
 	# simple
 	graph = log --all --graph --decorate --oneline
-	last = log -1 HEAD
+	last = show --name-only
 	undo = reset HEAD~1
 	unstage = restore --staged
 	# short
