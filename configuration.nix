@@ -89,6 +89,18 @@
 		<home-manager/nixos>
 	];
 
+	# Desktop Environment
+	programs.hyprland = {
+		enable = true;
+		xwayland.enable = true;
+	};
+	services.xserver = {
+		displayManager.gdm.enable = true;
+		desktopManager.gnome.enable = true;
+		# Enable the X11 windowing system.
+		enable = true;
+	};
+
 	networking.hostName = "nixos"; # Define your hostname.
 	# networking.wireless.enable = true;	# Enables wireless support via wpa_supplicant.
 
@@ -96,14 +108,6 @@
 
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
-
-	# Desktop Environment
-	services.xserver.displayManager.gdm.enable = true;
-	services.xserver.desktopManager.gnome.enable = true;
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-	};
 
 	# Set your time zone.
 	time.timeZone = "Europe/Zurich";
@@ -154,9 +158,6 @@
 	# networking.proxy.default = "http://user:password@proxy:port/";
 	# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-	# Enable the X11 windowing system.
-	services.xserver.enable = true;
-
 	# Configure console keymap
 	console.keyMap = "sg";
 
@@ -164,8 +165,10 @@
 	services.printing.enable = true;
 
 	# Bootloader.
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader = {
+		systemd-boot.enable = true;
+		efi.canTouchEfiVariables = true;
+	};
 
 	system.stateVersion = "24.05"; # Before changing this value read the documentation for this option (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
 }
