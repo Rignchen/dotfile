@@ -64,8 +64,11 @@
 				local all       all     trust
 			'';
 		};
+		logind.extraConfig = ''
+			# don’t shutdown when power button is short-pressed
+			HandlePowerKey=ignore
+		'';
 	};
-
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.rignchen = {
