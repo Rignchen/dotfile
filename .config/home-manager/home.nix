@@ -39,8 +39,10 @@
 			discord
 			libreoffice-qt
 			obs-studio
-			pinta # litteraly paint.net for linux
 			fuzzel # app launcher
+				# image editor
+				pinta # litteraly paint.net for linux
+				inkscape # svg editor
 			#app cli
 			pass
 			gh # github cli
