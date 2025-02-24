@@ -1,3 +1,5 @@
+# This Repository was marked as depredicated after switching to [gitlab](https://gitlab.com/Rignchen/dotfile)
+---
 This repository is a place to store my dotfiles, it's use to keep track of my configuration files and to make it easier to setup a new machine.
 
 ## Pre-installation
