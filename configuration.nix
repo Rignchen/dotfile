@@ -44,10 +44,7 @@
 	];
 
 	# Program config
-	programs = {
-		firefox.enable = true;
-		zsh.enable = true;
-	};
+	programs.zsh.enable = true;
 	services = {
 		kanata = {
 			enable = true;
